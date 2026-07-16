@@ -1,6 +1,6 @@
-<p align="center"><img src="src/icon.svg" alt="Craft Base" width="80" height="80"></p>
+<p align="center"><img src="src/icon.svg" alt="Base" width="80" height="80"></p>
 
-<h1 align="center">Craft Base</h1>
+<h1 align="center">Base</h1>
 
 <p align="center"><em>The shared foundation under every <a href="https://github.com/jalendport">jalendport</a> Craft CMS plugin.</em></p>
 
@@ -62,3 +62,5 @@ Found a bug or have a question? [Open an issue](https://github.com/jalendport/cr
 ---
 
 <p align="center">Made by <a href="https://jalendport.com">Jalen Davenport</a></p>
+
+<p align="center"><sub><sub>Icon: base by Lars Meiertoberens from <a href="https://thenounproject.com/browse/icons/term/base/">Noun Project</a> (CC BY 3.0)</sub></sub></p>
