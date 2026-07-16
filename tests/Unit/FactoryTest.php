@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use jalendport\base\testing\Factory;
 use yii\caching\ArrayCache;
 
