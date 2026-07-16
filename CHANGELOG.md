@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Unreleased
 
+## 1.1.1 - 2026-07-16
+
+### Fixed
+- Fixed a bug where the `configWarning()` macro's message could not be translated
+
 ## 1.1.0 - 2026-07-16
 
 ### Added
