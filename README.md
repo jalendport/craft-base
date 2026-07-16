@@ -7,7 +7,7 @@
 - **Base Plugin class** — extend `jalendport\base\Plugin` instead of `craft\base\Plugin` and get everything below for free.
 - **Per-plugin logging** — each plugin writes its own `storage/logs/<handle>-*.log`, with `MyPlugin::info()` / `::warning()` / `::error()` static helpers.
 - **Controller traits** — `runAndReturn()` for web controllers (success/failure responses done right) and `runAndExit()` + output helpers for console controllers.
-- **Settings macros** — a `configWarning()` Twig macro that flags settings overridden in `config/<handle>.php`.
+- **Settings helpers** — a `configWarning()` Twig macro that flags settings overridden in `config/<handle>.php`, plus `getConfigOverrides()` for disabling the fields a config file has taken control of.
 - **Testing helpers** — settings factories and an in-memory cache for unit-only Pest suites.
 
 ## Usage
@@ -29,13 +29,26 @@ class Altcha extends Plugin
 }
 ```
 
+Flag and disable the settings a config file has overridden:
+
+```php
+protected function settingsHtml(): ?string
+{
+    return Craft::$app->getView()->renderTemplate('altcha/settings', [
+        'settings' => $this->getSettings(),
+        'overrides' => $this->getConfigOverrides(),
+    ]);
+}
+```
+
 ```twig
 {% import 'jalendport-base/_macros' as base %}
 
 {{ forms.lightswitchField({
-    label: 'Enabled',
+    label: 'Enabled'|t('altcha'),
     name: 'enabled',
     on: settings.enabled,
+    disabled: 'enabled' in overrides,
     warning: base.configWarning('enabled', 'altcha'),
 }) }}
 ```

@@ -1,11 +1,27 @@
-# Release Notes for Craft Base
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/).
+
+## Unreleased
+
+## 1.1.0 - 2026-07-16
+
+### Added
+- Added `Plugin::getConfigOverrides()`, listing the settings overridden in `config/<handle>.php`
+- Added a root `.editorconfig`
+
+### Removed
+- Removed `FUNDING.yml`, which the org-level `.github` repo now covers
 
 ## 1.0.1 - 2026-07-16
 
 ### Changed
-- Removed `declare(strict_types=1)` from all files — Craft's internal type coercion depends on PHP's default weak typing mode.
+- Changed all files to drop `declare(strict_types=1)`, which conflicts with Craft's internal type coercion
 
 ## 1.0.0 - 2026-07-16
 
 ### Added
-- Initial release: base Plugin class, per-plugin file logging via `LogTrait`, web/console controller traits, `configWarning` settings macro, and Pest testing helpers.
+- Added the initial release: base Plugin class, per-plugin logging via `LogTrait`, web and console controller traits, the `configWarning` settings macro, and Pest testing helpers
