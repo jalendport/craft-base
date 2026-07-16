@@ -4,5 +4,6 @@ includes:
 parameters:
   level: 5
   treatPhpDocTypesAsCertain: false
+  phpVersion: 80200
   paths:
     - src
