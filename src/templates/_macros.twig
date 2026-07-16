@@ -1,0 +1,17 @@
+{# Shared macros for jalendport plugin settings pages.
+
+   Usage:
+     {% import 'jalendport-base/_macros' as base %}
+     {{ forms.lightswitchField({
+         …,
+         warning: base.configWarning('enabled', 'altcha'),
+     }) }}
+#}
+
+{# Returns a warning string when the setting is overridden in config/<file>.php, else empty. #}
+{% macro configWarning(setting, file) -%}
+    {%- set config = craft.app.config.getConfigFromFile(file) -%}
+    {%- if config[setting] is defined -%}
+        This setting is being overridden by <code>{{ setting }}</code> in <code>config/{{ file }}.php</code>.
+    {%- endif -%}
+{%- endmacro %}

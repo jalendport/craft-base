@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ecs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: composer install --no-interaction --no-progress
+      - run: composer check-cs
+
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: composer install --no-interaction --no-progress
+      - run: composer phpstan
+
+  pest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: composer install --no-interaction --no-progress
+      - run: composer test
