@@ -1,6 +1,8 @@
+<p align="center"><img src="src/icon.svg" alt="Craft Base" width="80" height="80"></p>
+
 <h1 align="center">Craft Base</h1>
 
-<p align="center">The shared foundation under every <a href="https://github.com/jalendport">jalendport</a> Craft CMS plugin.</p>
+<p align="center"><em>The shared foundation under every <a href="https://github.com/jalendport">jalendport</a> Craft CMS plugin.</em></p>
 
 ## Features
 
