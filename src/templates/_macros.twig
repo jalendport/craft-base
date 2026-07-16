@@ -8,10 +8,17 @@
      }) }}
 #}
 
-{# Returns a warning string when the setting is overridden in config/<file>.php, else empty. #}
+{# Returns a warning string when the setting is overridden in config/<file>.php, else empty.
+
+   The message is translated against the calling plugin's own category (`file` is
+   the plugin handle), so each plugin ships the source string in its
+   translations/en/<handle>.php. #}
 {% macro configWarning(setting, file) -%}
     {%- set config = craft.app.config.getConfigFromFile(file) -%}
     {%- if config[setting] is defined -%}
-        This setting is being overridden by <code>{{ setting }}</code> in <code>config/{{ file }}.php</code>.
+        {{- 'This setting is being overridden by the {setting} setting in your {file} config file.'|t(file, {
+            setting: '<code>' ~ setting ~ '</code>',
+            file: '<code>config/' ~ file ~ '.php</code>',
+        })|raw -}}
     {%- endif -%}
 {%- endmacro %}
