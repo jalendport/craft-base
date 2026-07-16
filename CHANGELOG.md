@@ -11,10 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 - Added `Plugin::getConfigOverrides()`, listing the settings overridden in `config/<handle>.php`
-- Added a root `.editorconfig`
-
-### Removed
-- Removed `FUNDING.yml`, which the org-level `.github` repo now covers
 
 ## 1.0.1 - 2026-07-16
 
