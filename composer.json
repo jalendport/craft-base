@@ -2,7 +2,7 @@
   "name": "jalendport/craft-base",
   "description": "Shared foundation for jalendport Craft CMS plugins",
   "type": "library",
-  "license": "mit",
+  "license": "MIT",
   "authors": [
     {
       "name": "Jalen Davenport",
